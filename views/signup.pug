@@ -1,0 +1,26 @@
+extends base
+
+block content
+  main.main
+    .form
+      h3.heading-secondary Sign up
+      form.signup-form
+        .form__group
+          label.form__label(for='name') Name
+          input.name.form__input(type='text', required)
+        .form__group
+          label.form__label(for='email') Email
+          input.email.form__input(type='email', placeholder='you@example.com', required)
+        .form__group
+          label.form__label(for='password') Password
+          input.password.form__input(type='password', placeholder='••••••••', required, minlength='8')
+        .form__group
+          label.form__label(for='password--confirm') Confirm Password
+          input.password--confirm.form__input(type='password', placeholder='••••••••', required, minlength='8')
+        .form__group
+          button.btn.btn--signup Sign up
+    
+    a.return__login-link(href="/login")
+      span.return__login Return to log in page
+    if user
+      button.btn.btn--timeline Timeline

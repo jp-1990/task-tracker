@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            margin:0px;
+            padding:0px;
+        }
+
+        .container {
+            width: 70%;
+            margin-left: 15%;
+            border: 1px solid black
+        }
+        
+        .month {
+            border: 1px solid black;
+            text-align: center;
+            margin: 50px;
+        }
+        
+        .timecontainer {
+            display: flex;
+        }
+        
+        .times {
+            display: flex;
+            width: 96%;
+        }
+        
+        .days {
+            display: flex;
+            width: 4%;
+        }
+
+        .hour {
+            flex-direction: row;
+            width: 4.16%;
+            border: 1px solid gray;
+        }
+
+        
+        /* 1 min = 0.0694% of 24 hours */
+        .log {
+            
+            border: 1px solid black;
+            border-radius: 4px;
+            margin: 2px 0px;
+            text-align: center;
+            
+        }
+    
+        .logcontainer {
+            display: flex;
+        }
+        
+        .logday {
+            width: 4%;   
+        }
+        
+        .logs {
+            width:96%;
+        }
+
+        /* 8 to 13 */
+        .js {
+            background-color: yellow;
+            width: 20.82%;
+            margin-left: 33.312%;
+        }
+
+        /* 10:15 to 16:45 */
+        .py {
+            background-color: green;
+            width: 27.066%;
+            margin-left: 42.681%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="month"> July
+        </div>
+        <div class="timecontainer">
+            <div class="days">test</div>
+            <div class="times">
+                <div class="hour">00</div>
+                <div class="hour">01</div>
+                <div class="hour">02</div>
+                <div class="hour">03</div>
+                <div class="hour">04</div>
+                <div class="hour">05</div>
+                <div class="hour">06</div>
+                <div class="hour">07</div>
+                <div class="hour">08</div>
+                <div class="hour">09</div>
+                <div class="hour">10</div>
+                <div class="hour">11</div>
+                <div class="hour">12</div>
+                <div class="hour">13</div>
+                <div class="hour">14</div>
+                <div class="hour">15</div>
+                <div class="hour">16</div>
+                <div class="hour">17</div>
+                <div class="hour">18</div>
+                <div class="hour">19</div>
+                <div class="hour">20</div>
+                <div class="hour">21</div>
+                <div class="hour">22</div>
+                <div class="hour">23</div>
+            </div>
+        </div>
+        
+        <div class="logcontainer">
+            <div class="logday">1</div>
+            <div class="logs">
+                <div class="log js">Javascript</div>
+            </div>
+        </div>
+        
+            
+        <div class="log py">Python</div>
+    </div>
+
+
+</body>
+</html>

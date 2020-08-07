@@ -1,0 +1,927 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: lato;
+  font-size: 70%;
+  user-select: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+input {
+  user-select: text;
+}
+
+input:focus {
+  outline: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  box-shadow: 0 0 0 30px white inset !important;
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+a:link,
+a:visited {
+  color: white;
+}
+
+.alert {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  z-index: 9999;
+  background-color: #013b53;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-align: center;
+  padding: 2.5rem 2rem;
+  width: 25rem;
+  box-shadow: 0 0 2rem rgb(0, 0, 0);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  animation: fade-in 0.3s;
+}
+
+.alert.success {
+  background-color: rgb(0, 202, 10);
+}
+
+.alert.error {
+  background-color: rgb(228, 0, 0);
+}
+
+.alert.fade {
+  animation: fade-out 0.3s;
+}
+
+.btn {
+  outline: none;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.header {
+  background-color: #1fbcfe;
+  height: 5.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  margin: 1rem 0;
+  box-shadow: 0px 0px 2px #013b53;
+}
+
+.nav--user {
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1440px;
+}
+
+.nav__el {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.nav__el ion-icon {
+  color: white;
+  margin-left: 0.5rem;
+  font-size: 2.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.4rem;
+  border-radius: 1rem;
+}
+
+.nav__el ion-icon:hover {
+  cursor: pointer;
+}
+
+.nav__el__signup {
+  margin-left: 55%;
+}
+
+.nav__el--signup {
+  margin-left: 0;
+  text-decoration: underline rgba(255, 255, 255, 0.7);
+}
+
+.nav__el--logout {
+  font-size: 1.5rem;
+  text-decoration: underline rgba(255, 255, 255, 0.7);
+}
+
+.nav__user-img {
+  height: 3.8rem;
+  width: 3.8rem;
+  border-radius: 1.5rem;
+  margin: 0 1rem;
+  border: 1px solid white;
+  box-shadow: 0px 0px 5px white;
+}
+
+.nav__el__signup ion-icon {
+  border: none;
+  color: light;
+}
+.wrap {
+  width: 100%;
+  display: flex;
+  margin-bottom: 2rem;
+  justify-content: space-around;
+  white-space: nowrap;
+  font-size: 0;
+}
+.task__container {
+  width: 90%;
+  min-width: 320px;
+}
+
+.task__header {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  margin: 0.5rem 0;
+}
+
+.task__operations {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.task__operations .btn {
+  width: 12rem;
+  height: 3rem;
+  font-size: 1.8rem;
+  padding: 0.1rem;
+  margin: 0 8px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0px 0px 2px #013b53;
+  color: white;
+}
+
+.btn--signup,
+.btn--login,
+.btn--create {
+  background-color: #018dc7;
+}
+
+.btn--timeline {
+  margin-top: 4rem;
+}
+
+.btn--timeline,
+.btn--summary {
+  background-color: #1fbbfd;
+}
+
+.task__monthyear {
+  background-color: white;
+  color: #015173;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+
+.task__month__container {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+.task__month--prev:hover {
+  cursor: pointer;
+}
+.task__month--next:hover {
+  cursor: pointer;
+}
+.task__month {
+  text-align: center;
+  width: 12rem;
+}
+
+.task__year__container {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+.task__year--prev:hover {
+  cursor: pointer;
+}
+.task__year--next:hover {
+  cursor: pointer;
+}
+
+.task__year {
+  text-align: center;
+  width: 12rem;
+}
+
+.task__timeline {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.task__day {
+  display: none;
+  width: 4%;
+}
+
+.task__times {
+  display: flex;
+  width: 96%;
+  padding: 0 0 1rem 0;
+  margin-left: -10px;
+}
+
+.task__hour {
+  flex-direction: row;
+  width: 4.167%;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #013b53;
+}
+
+.log__container {
+  display: flex;
+  height: 2.5rem;
+  border: solid 0.5px #1fbbfe10;
+  font-size: 0;
+  width: 100%;
+}
+
+.log__day {
+  width: 3%;
+  align-self: center;
+  text-align: right;
+  padding-right: 1%;
+  color: #013a5349;
+  font-size: 1rem;
+}
+
+.log__task {
+  width: 96%;
+}
+
+/* 1 min = 0.0694% of 24 hours */
+
+.log {
+  border: 1px solid rgb(173, 173, 173);
+  border-radius: 8px;
+  margin: 2px 0px;
+  text-align: center;
+  height: 2rem;
+  padding: 0 0rem;
+  font-size: 0rem;
+  overflow: hidden;
+  animation: fade-in 0.5s;
+}
+
+.log:hover {
+  cursor: pointer;
+}
+
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    height: 1px;
+  }
+  100% {
+    height: 340px;
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.log__click {
+  font-size: 1rem;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 9998;
+  background-color: rgb(252, 252, 252);
+  border: 1px solid rgb(190, 190, 190);
+  border-radius: 1rem;
+  box-shadow: 0 0 0.1rem rgb(190, 190, 190);
+  color: black;
+  width: 300px;
+  height: 340px;
+  animation: slide-down 0.3s ease-out;
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.log__click:hover {
+  cursor: default;
+}
+
+.log__click__titlebox {
+  border: 1px solid grey;
+  box-shadow: 0 0 0.1rem grey;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.task__summary__titlebox,
+.create__form__titlebox {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.form h3,
+.task__summary__titlebox h3,
+.create__form__titlebox h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  width: 80%;
+  margin-left: 10%;
+  padding-top: 1rem;
+  color: #015173;
+  text-align: center;
+}
+
+.log__click__titlebox h3 {
+  font-size: 2rem;
+  width: 80%;
+  margin-left: 10%;
+}
+
+ion-icon[name='close']:hover {
+  cursor: pointer;
+}
+
+.task__summary ion-icon,
+.create__form ion-icon,
+.log__click__titlebox ion-icon {
+  font-size: 3rem;
+  width: 8%;
+  margin-right: 2%;
+}
+.task__summary ion-icon,
+.create__form ion-icon {
+  color: #015173;
+}
+
+.log__click__duration {
+  margin: 0.5em;
+}
+
+.task__summary__group::after,
+.signup-form::after,
+.create-form::after,
+.login-form::after {
+  content: '';
+  display: block;
+  height: 0.2rem;
+  background-color: #0151734d;
+  width: 70%;
+  margin-left: 15%;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+}
+
+input {
+  font-family: lato;
+}
+
+input[type='date'] {
+  font-family: lato;
+  background-color: white;
+  padding: 0;
+  margin: 0;
+}
+
+.signup-form,
+.login-form {
+  padding: 2rem 8%;
+}
+.signup-form .form__label,
+.login-form .form__label {
+  width: 30%;
+}
+
+.btn--signup,
+.btn--login {
+  margin-top: 3rem;
+}
+
+.signup-form input,
+.login-form input,
+.create-form input,
+.update-form input {
+  width: 55%;
+  border: 1px solid rgb(173, 173, 173);
+  border-radius: 0.5rem;
+  padding: 0.3rem;
+}
+
+.update-form ::placeholder {
+  color: black;
+  opacity: 1;
+}
+.form__group {
+  margin-top: 0.8rem;
+  display: flex;
+  align-items: center;
+}
+
+.password--confirm {
+  align-self: center;
+}
+
+#email,
+#password,
+#title,
+#title--update {
+  width: 55%;
+  margin-right: 15%;
+}
+#group,
+#group--update {
+  width: 55%;
+  margin-right: 15%;
+}
+
+#description,
+#description--update {
+  width: 65%;
+  margin-right: 5%;
+}
+#start-date,
+#end-date,
+#start--updateDate,
+#end--updateDate {
+  width: 45%;
+  margin-right: 2%;
+}
+#start-time,
+#end-time,
+#start--updateTime,
+#end--updateTime {
+  width: 23%;
+  margin-right: 0%;
+}
+
+.form__label {
+  display: inline-block;
+  text-align: right;
+  padding-right: 1rem;
+  width: 20%;
+  font-size: 1.2rem;
+}
+
+.colour__picker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.colour__picker p {
+  margin-right: 0.5em;
+}
+
+.colour-value,
+.colour.selected {
+  border: 1px solid rgb(173, 173, 173);
+  border-radius: 0.5rem;
+  width: 5rem;
+  height: 2rem;
+  margin: 0.8rem;
+  background-color: #1fbbfd;
+}
+
+.colour__options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-49%, -1px);
+  position: absolute;
+  z-index: 9999;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 4px;
+  color: black;
+  width: 280px;
+  height: auto;
+  padding: 0.5rem;
+  animation: fade-in 0.4s;
+}
+
+.colour.options {
+  border: 1px solid rgb(173, 173, 173);
+  animation: fade-in 0.6s;
+  border-radius: 12px;
+  width: 2em;
+  height: 2em;
+  margin: 0.2rem;
+}
+
+.colour-value,
+.colour:hover {
+  cursor: pointer;
+}
+
+.log__click__buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0.8rem;
+}
+
+.btn--signup,
+.btn--timeline,
+.btn--login,
+.btn--create,
+.log__click__buttons .btn {
+  border-radius: 0.8rem;
+  padding: 0.5rem;
+  width: 8rem;
+  border: 1px solid grey;
+  font-size: 1.3rem;
+}
+
+.btn--signup,
+.btn--timeline,
+.form__group .btn--login,
+.form__group .btn--create {
+  width: 40%;
+  margin-left: 30%;
+  color: white;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.btn--update {
+  margin-left: 1.5rem;
+}
+
+.btn--delete {
+  background-color: rgb(255, 31, 31);
+  color: white;
+  margin-right: 1.5rem;
+}
+
+.log__click__footer {
+  height: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid grey;
+}
+
+.task__summary__group h2,
+.task__summary__group h3 {
+  color: #013b53;
+}
+
+.task__summary__group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 1rem;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  line-height: 2rem;
+}
+.task__summary__group::after {
+  text-align: center;
+}
+
+.task__summary--group-stats {
+  margin-left: 3rem;
+}
+
+.task__summary--group-values {
+  margin-top: 0.8rem;
+}
+
+.task__summary__tasks {
+  margin: 1rem 0rem 2rem 4rem;
+}
+
+.task__summary--task-stats {
+  margin: 1rem;
+}
+
+.task__summary--task-titlebox {
+  display: flex;
+  align-items: center;
+  margin: 0.4rem 0;
+}
+
+.task__summary--task-colour {
+  margin-right: 1rem;
+  border-radius: 0.2rem;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.return__login-link {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.return__login {
+  font-size: 1.2rem;
+  color: #015173;
+  text-decoration: underline;
+  text-align: center;
+}
+
+.footer {
+  background-color: #1fbcfe;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  color: white;
+  margin: 1rem 0;
+}
+
+.hide {
+  display: none;
+}
+
+.task__key {
+  display: none;
+}
+
+@media screen and (min-width: 720px) {
+  .task__container {
+    display: flex;
+    flex-direction: column;
+  }
+  .task__header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: center;
+    width: 700px;
+  }
+
+  .task__operations {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .task__operations .btn {
+    margin: 0.4rem 0;
+  }
+
+  .task__monthyear {
+    margin: 1rem 0;
+    align-self: flex-start;
+  }
+
+  .task__month__container,
+  .task__year__container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .task__infobox {
+    margin: 0 0 0 1.7rem;
+  }
+
+  .create__form {
+    width: 90%;
+    margin-left: 5%;
+  }
+
+  .task__key {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #013f5a;
+    width: 100%;
+    font-size: 1rem;
+    margin: 1rem 0 3.5rem 0;
+  }
+
+  .task__key--container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    animation: fade-in 0.5s;
+  }
+
+  .task__key--key {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0.5rem 1rem;
+  }
+  .task__key--title {
+    padding: 0 0.5rem;
+  }
+
+  .task__key--colour {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgb(173, 173, 173);
+  }
+
+  .signup-form,
+  .login-form {
+    width: 62%;
+    margin-left: 21%;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .task__container {
+    max-width: 1300px;
+  }
+
+  header .nav {
+    max-width: 1000px;
+  }
+
+  .task__key {
+    width: 90%;
+    margin: 1rem 5% 3.5rem 5%;
+  }
+}
+
+@media screen and (min-width: 1900px) {
+  .task__container {
+    flex-direction: row;
+  }
+  .task__header {
+    flex-direction: column;
+    align-self: flex-start;
+    justify-content: center;
+    width: 500px;
+    margin-top: 100px;
+  }
+
+  .task__operations {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .task__operations .btn {
+    margin: 0.5rem;
+  }
+
+  .task__monthyear {
+    position: absolute;
+    top: 90px;
+    align-self: center;
+  }
+
+  .task__infobox {
+    z-index: 9999;
+    margin: 0;
+  }
+
+  .task__body {
+    flex-direction: row;
+    width: 1200px;
+    margin-top: 3rem;
+  }
+  .task__body h2 {
+    font-size: 3rem;
+    text-align: center;
+    color: #013f5a;
+    margin-bottom: 3rem;
+  }
+
+  .log {
+    position: relative;
+    overflow: visible;
+  }
+  .log__click {
+    position: absolute;
+    top: 20px;
+    left: -5px;
+    animation: fade-in 0.4s;
+  }
+
+  .login-form,
+  .signup-form {
+    width: 40%;
+    margin-left: 30%;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  html {
+    font-size: 100%;
+  }
+
+  header .nav {
+    max-width: 1400px;
+  }
+  .task__container {
+    max-width: 1700px;
+  }
+
+  .task__header {
+    width: 400px;
+    margin-top: 9rem;
+  }
+
+  .task__monthyear {
+    top: 130px;
+  }
+
+  .task__body {
+    width: 1800px;
+  }
+
+  .log__click {
+    width: 400px;
+    height: 430px;
+  }
+
+  .colour__options {
+    width: 380px;
+  }
+
+  ::placeholder {
+    font-size: 1rem;
+  }
+
+  .login-form,
+  .signup-form {
+    width: 40%;
+    margin-left: 30%;
+  }
+
+  .signup-form .form__group,
+  .login-form .form__group {
+    margin: 1rem 0;
+  }
+
+  .signup-form .form__input,
+  .login-form .form__input {
+    font-size: 1.5rem;
+  }
+
+  .signup-form .form__input::placeholder,
+  .login-form .form__input::placeholder {
+    font-size: 1.5rem;
+  }
+
+  .signup-form .form__label,
+  .login-form .form__label {
+    font-size: 1.5rem;
+  }
+
+  .task__summary__titlebox {
+    margin-bottom: 2rem;
+  }
+
+  .task__summary--group-stats {
+    margin-left: 0.5rem;
+  }
+
+  .task__summary__tasks {
+    margin-left: 1.5rem;
+  }
+}

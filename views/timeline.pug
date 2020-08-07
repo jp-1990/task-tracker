@@ -1,0 +1,68 @@
+extends base
+
+block content
+  main.main
+    //- p #{user}
+
+    .wrap
+      .task__container(data-tasks=`${JSON.stringify(data.tasks)}`)
+        - const now = new Date()
+        .task__header
+          .task__operations
+            button.btn.btn--create Create
+            button.btn.btn--summary Summary
+          .task__infobox
+            .create__form
+              .create__form__titlebox
+                h3 Create
+                ion-icon(name="close")
+              form.create-form(autocomplete="off")
+                .form__group
+                  label.form__label(for='title') Title
+                  input#title.form__input(type='text' autocomplete="on" required='required')
+                .form__group
+                  label.form__label(for='group') Group
+                  input#group.form__input(type='text' autocomplete="on")
+                .form__group
+                  label.form__label(for='description') Notes
+                  input#description.form__input(type='text')
+                .form__group
+                  label.form__label(for='start') Start
+                  input#start-date.form__input(type='date' required='required')
+                  input#start-time.form__input(type='text' placeholder=' e.g 8:00' required='required')
+                .form__group
+                  label.form__label(for='end') End
+                  input#end-date.form__input(type='date' required='required')
+                  input#end-time.form__input(type='text' placeholder=' e.g 20:00' required='required')
+                .colour__picker
+                  p Colour
+                  .colour-value
+                .form__group
+                  button.btn.btn--create Create
+            .task__summary
+          
+          .task__monthyear
+            .task__month__container
+              .task__month--prev
+                ion-icon(name="chevron-back-outline")
+              .task__month
+              .task__month--next
+                ion-icon(name="chevron-forward-outline")
+            .task__year__container
+              .task__year--prev
+                ion-icon(name="chevron-back-outline")
+              .task__year
+              .task__year--next
+                ion-icon(name="chevron-forward-outline")
+        
+        .task__body
+          h2 Timeline
+          .task__key
+            
+          .task__timeline
+            .task__day
+            - const day = ['', '', '','','04:00','','','','08:00','','','','12:00','','','','16:00','','','','20:00','','','']
+            .task__times
+              for time in day
+                .task__hour= time
+

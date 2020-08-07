@@ -1,0 +1,24 @@
+doctype html
+//- pug files are a whitespace sensitive way of writing html, relying on indentation instead of opening and closing tags
+html
+  head
+    block head
+      meta(charset='UTF-8')
+      meta(name='viewport' content='width=device-width, initial-scale=1.0')
+      link(rel='stylesheet' href='/css/style.css')
+      //-link(rel='shortcut icon' type='image/png' href='/img/favicon.png')
+      link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300,300i,400,500,700')
+      script(src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js")
+      title Time Management | #{title}
+
+  body
+    //- HEADER
+    include _header
+    
+    //- CONTENT
+    block content
+
+    //- FOOTER
+    include _footer
+
+    script(src='/js/bundle.js')

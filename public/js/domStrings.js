@@ -1,0 +1,20 @@
+/* eslint-disable */
+export const DOMStrings = {
+  loginForm: document.querySelector('.login-form'),
+  loginButton: document.querySelector('.btn--login'),
+  createForm: document.querySelector('.create__form'),
+  signupForm: document.querySelector('.signup-form'),
+  container: document.querySelector('.task__container'),
+  taskBody: document.querySelector('.task__body'),
+  createButton: document.querySelector('.btn--create'),
+  summaryButton: document.querySelector('.btn--summary'),
+  infoBox: document.querySelector('.task__infobox'),
+  summary: document.querySelector('.task__summary'),
+  monthYearContainer: document.querySelector('.task__monthyear'),
+  monthDiv: document.querySelector('.task__month'),
+  yearDiv: document.querySelector('.task__year'),
+  prevMonth: document.querySelector('.task__month--prev'),
+  nextMonth: document.querySelector('.task__month--next'),
+  prevYear: document.querySelector('.task__year--prev'),
+  nextYear: document.querySelector('.task__year--next'),
+};

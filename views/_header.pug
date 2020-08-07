@@ -1,0 +1,13 @@
+header.header
+  nav.nav.nav--user
+    if user
+      a.nav__el(href='#')
+        img.nav__user-img(src=`img/users/${user.photo}` alt=`Photo of ${user.name}`)
+        span= user.name
+      
+      a.nav__el.nav__el--logout(href='#') Sign out
+      
+    else
+      .nav__el.nav__el__signup
+        ion-icon(name="chevron-forward-circle")
+        a.nav__el.nav__el--signup(href='/signup') Sign up
