@@ -33,6 +33,7 @@ const matchTask = (task) => {
 
 // add style to task
 const addStyle = (task, start, end, prevTask) => {
+  console.log(task, start, end, prevTask);
   document.querySelectorAll(`.${task.cssSelector}`).forEach((el) => {
     // if prev task is specified adjust left margin to suit
     if (!el.style.cssText) {

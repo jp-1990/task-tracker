@@ -62,7 +62,7 @@ if (window.location.pathname === home) {
   createTaskListeners(updateTaskColourAndGroup);
 
   // populate task timeline using the tasks array
-
+  console.log(modifiedTasks(tasks));
   populateTimeline(modifiedTasks(tasks));
 
   // event listeners on click for update task box
