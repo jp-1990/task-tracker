@@ -61,23 +61,19 @@ const taskSchema = new mongoose.Schema(
 // VIRTUALS // --------
 taskSchema.virtual('percentageTimes').get(function () {
   const day = 24 * 60;
-  console.log(this.start.toLocaleTimeString());
   const startTime = JSON.stringify(this.start.toLocaleTimeString())
     .replace(/"/g, '')
     .split(':');
 
   if (startTime[2].slice(-2) === 'PM' && startTime[0] * 1 !== 12)
     startTime[0] = startTime[0] * 1 + 12;
-  console.log(startTime);
 
-  console.log(this.end.toLocaleTimeString());
   const endTime = JSON.stringify(this.end.toLocaleTimeString())
     .replace(/"/g, '')
     .split(':');
 
   if (endTime[2].slice(-2) === 'PM' && endTime[0] * 1 !== 12)
     endTime[0] = endTime[0] * 1 + 12;
-  console.log(endTime);
   const startMins = startTime[0] * 60 + startTime[1] * 1;
   const endMins = endTime[0] * 60 + endTime[1] * 1;
 
