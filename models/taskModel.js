@@ -68,10 +68,11 @@ taskSchema.virtual('percentageTimes').get(function () {
 
   console.log(startTime);
 
+  console.log(this.end);
   const endTime = JSON.stringify(this.end.toLocaleTimeString())
     .replace(/"/g, '')
     .split(':');
-
+  console.log(endTime);
   const startMins = startTime[0] * 60 + startTime[1] * 1;
   const endMins = endTime[0] * 60 + endTime[1] * 1;
 
