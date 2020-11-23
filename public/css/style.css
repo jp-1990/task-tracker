@@ -191,6 +191,7 @@ a:visited {
 
 .btn--timeline {
   margin-top: 4rem;
+  max-width: 200px;
 }
 
 .btn--timeline,
@@ -584,11 +585,19 @@ input[type='date'] {
 }
 
 .btn--signup,
-.btn--timeline,
 .form__group .btn--login,
 .form__group .btn--create {
   width: 40%;
   margin-left: 30%;
+  color: white;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.btn--timeline {
+  width: 40%;
+  margin-left: 50%;
+  transform: translateX(-50%);
   color: white;
   font-weight: 500;
   margin-bottom: 2rem;
