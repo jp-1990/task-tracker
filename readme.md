@@ -3,8 +3,8 @@
 A hybrid server/client-side rendered WebApp using Node.js Express routing to deliver PUG templated pages to the client, which are then handled by front-end JavaScript. The database is MongoDB, interacted with using Mongoose. Authentication is implemented with JWT.
 
 ![time management showcase gif](./devdata/timemanagement_showcase.gif)
-**Hosted on Heroku**
-https://fathomless-journey-08641.herokuapp.com/
+**Hosted on Heroku**  
+https://fathomless-journey-08641.herokuapp.com/  
 _[ Allow up to 30 seconds for the server to start ]_
 
 Create an account to start using the app.
